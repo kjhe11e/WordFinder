@@ -34,7 +34,7 @@ public class WordFinder {
         trieNode[] tmp = dict;
         for(int j=0; j<s.length(); j++){
             if(tmp[s.charAt(j) - 'a'] == null){
-                System.out.println(0);
+                System.out.println("NOT FOUND");
                 return;
             }
             else{
@@ -53,18 +53,19 @@ public class WordFinder {
         System.out.println("Valid commands are:");
         System.out.println("add (string)");
         System.out.println("find (string)");
-        System.out.println();
-        System.out.println("Enter number of commands: ");
-        int n = in.nextInt();
-        for(int a0 = 0; a0 < n; a0++){
+        System.out.println("Type 'exit' to close");
+
+        String op = "";
+        String contact = "";
+        while(!op.equals("exit")) {
             System.out.print("Command: ");
-            String op = in.next();
-            String contact = in.next();
-            
+            op = in.next();
             if(op.equals("add")){
+                contact = in.next();
                 add(contact);
             }
-            else{
+            else if(op.equals("find")) {
+                contact = in.next();
                 find(contact);
             }
         }
