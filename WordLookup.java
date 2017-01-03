@@ -4,7 +4,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class WordFinder {
+public class WordLookup {
     static trieNode[] dict = new trieNode[26];
     
     public static class trieNode{
